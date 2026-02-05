@@ -9,48 +9,47 @@
 	<link rel="icon" type="image/png" href="icons/fire-favicon.png">
 	<link rel="shortcut icon" href="icons/fire-favicon.png" type="image/png">
     <style>
-        body {
+       body {
             font-family: 'Roboto', sans-serif;
             background-color: #0a0a0a;
             color: #e0e0e0;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
-        .code-font {
-            font-family: 'Source Code Pro', monospace;
-        }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
+        .code-font { font-family: 'Source Code Pro', monospace; }
         .gradient-text {
             background: linear-gradient(90deg, #4f46e5, #10b981);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.5), transparent);
+        /* Optimized Slider CSS */
+        .slider-viewport {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            cursor: grab;
+            padding: 20px 0;
         }
-        .glow {
-            box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+        .slider-viewport:active { cursor: grabbing; }
+        .slider-track {
+            display: flex;
+            gap: 1.5rem;
+            will-change: transform;
         }
-		.slider-viewport::-webkit-scrollbar { display: none; }
-		.slider-viewport {
-		  overflow: hidden;
-		  width: 1050px; /* 3 cards x 350px each */
-		  margin: 0 auto;
-		}
-		.slider-track {
-		  display: flex;
-		  animation: scrollLoop 20s linear infinite;
-		}
-		@keyframes scrollLoop {
-		  0%   { transform: translateX(0); }
-		  100% { transform: translateX(-1050px); } /* scroll 3 cards */
-		}
+        .project-card-wrapper {
+            flex: 0 0 85%; /* Mobile */
+            box-sizing: border-box;
+        }
+        @media (min-width: 768px) { .project-card-wrapper { flex: 0 0 45%; } }
+        @media (min-width: 1024px) { .project-card-wrapper { flex: 0 0 380px; } }
+        
+        .card-image-container {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        .glow { box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); }
     </style>
 </head>
 <body class="min-h-screen">
@@ -623,60 +622,63 @@
     </footer>
 
     <script>
-		// <!-- Auto-scroll JS -->
-		const scrollRow = document.getElementById('scrollRow');
-		const speed = 0.5; // pixels per frame (adjust for speed)
+		const track = document.getElementById('sliderTrack');
+        const viewport = document.getElementById('sliderViewport');
+        let scrollPos = 0;
+        let isDragging = false;
+        let startX, scrollLeft;
+        let animationId;
 
-		function animateScroll() {
-		  scrollRow.scrollLeft += speed;
-		  if (scrollRow.scrollLeft >= scrollRow.scrollWidth - scrollRow.clientWidth) {
-			scrollRow.scrollLeft = 0;
-		  }
-		  requestAnimationFrame(animateScroll);
-		}
-
-		requestAnimationFrame(animateScroll);
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                mobileMenu.classList.add('hidden');
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    const headerOffset = 80;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+        function step() {
+            if (!isDragging) {
+                scrollPos -= 0.7; // Speed
+                if (Math.abs(scrollPos) >= track.scrollWidth / 2) {
+                    scrollPos = 0;
                 }
-            });
+                track.style.transform = `translateX(${scrollPos}px)`;
+            }
+            animationId = requestAnimationFrame(step);
+        }
+
+        // Desktop Drag
+        viewport.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = scrollPos;
+            cancelAnimationFrame(animationId);
         });
 
-        // Contact form submission
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // In a real implementation, you would send the form data to a server here
-                alert('Thank you for your message! I will get back to you soon.');
-                this.reset();
-            });
-        }
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            step();
+        });
+
+        viewport.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const x = e.pageX - track.offsetLeft;
+            scrollPos = scrollLeft + (x - startX);
+            track.style.transform = `translateX(${scrollPos}px)`;
+        });
+
+        // Mobile Touch
+        viewport.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].pageX - track.offsetLeft;
+            scrollLeft = scrollPos;
+        });
+
+        viewport.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        viewport.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX - track.offsetLeft;
+            scrollPos = scrollLeft + (x - startX);
+            track.style.transform = `translateX(${scrollPos}px)`;
+        });
+
+        step();
     </script>
 </body>
 </html>
