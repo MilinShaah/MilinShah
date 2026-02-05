@@ -146,230 +146,117 @@
 
     <!-- Projects Section -->
 	
-    <section id="projects" class="py-10 px-3">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
-            <p class="text-gray-400 max-w-2xl mx-auto">A showcase of my work in visual effects and crowd simulation across various productions</p>
-        </div>
-		
-		<div class="slider-viewport w-full max-w-[95%] mx-auto overflow-hidden">
-		<div class="slider-track">
-			<!-- Project Cards (10 + 3 clones for loop) -->
-			  <!-- 10 Project Cards + 3 clones for smooth looping -->
-			  <!-- Repeat these as needed -->
-			  
-		
-            <!-- Project 1 -->
-			<div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-				<div class="relative h-64 overflow-hidden">
-                    <img src="Images/nimona.png" alt="Large-scale fantasy battle scene with thousands of AI-driven characters clashing, magical effects and dynamic lighting" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Nimona</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2023</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Massive crowd simulation with battle Crowd , stadium Crowd.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Maya</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
-                    </div>
-                </div>
-            </div>
+    <section id="projects" class="py-20 px-4 overflow-hidden">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">A showcase of my work in visual effects and crowd simulation across various productions</p>
+    </div>
+
+    <div class="slider-viewport" id="sliderViewport">
+        <div class="slider-track" id="sliderTrack">
             
-            <!-- Project 2 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/masters_of_the_airs.png" alt="Destruction simulation showing a collapsing skyscraper with realistic physics, debris and dust effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Masters Of The Air</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2023</span>
+            <div class="project-card-wrapper">
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg h-full glow-border">
+                    <div class="card-image-container relative">
+                        <span class="absolute top-2 right-2 bg-indigo-600 text-[10px] font-bold px-2 py-1 rounded z-20">NEW</span>
+                        <img src="Images/thama.png" alt="Movie Thama" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
                     </div>
-                    <p class="text-gray-400 mb-4">Procedural plan destruction system for large-scale Battle ,Large scale battle Crowd.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">VEX</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">C++</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/Furiosa.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Furiosa: A Mad Max Saga</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2024</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Developing procedural crowd setups, R&D and simulations, moreover working with cross-site departments(team) to ensure setup is efficient and able to meet the creative brief.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Thama</h3>
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2026</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Lead Crowd & FX simulation for hero sequences and complex environment interactions.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Crowd TD</span>
+                        </div>
                     </div>
                 </div>
             </div>
-			
-			<!-- Project 4 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/DUNE_2.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Dune: Part Two</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2024</span>
+
+            <div class="project-card-wrapper">
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg h-full glow-border">
+                    <div class="card-image-container relative">
+                        <span class="absolute top-2 right-2 bg-indigo-600 text-[10px] font-bold px-2 py-1 rounded z-20">NEW</span>
+                        <img src="Images/border2.png" alt="Movie Border 2" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
                     </div>
-                    <p class="text-gray-400 mb-4">R&D for building complex war setup for multiple sequence.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
-                    </div>
-                </div>
-            </div>
-			
-			<!-- Project 5 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/The_Traveller.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">The Traveller</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2024</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Worked on complicated and hero shots</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Border 2</h3>
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2026</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">FX Artist focused on large-scale battle destruction and cinematic explosion simulations.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">VEX</span>
+                        </div>
                     </div>
                 </div>
             </div>
-			
-			<!-- Project 6 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/LordOfTheRings.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">The Lord of the Rings: The War of the Rohirrim</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2024</span>
+
+            <div class="project-card-wrapper">
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg h-full border border-gray-700">
+                    <div class="card-image-container">
+                        <img src="Images/nimona.png" alt="Nimona" class="w-full h-full object-cover" />
                     </div>
-                    <p class="text-gray-400 mb-4">Developing procedural crowd setups, R&D and simulations, moreover working with cross-site departments(team) to ensure setup is efficient and able to meet the creative brief.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
-                    </div>
-                </div>
-            </div>
-			
-			<!-- Project 7 -->
-            <<div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/skyForce.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Sky Force</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2025</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Developing procedural crowd setups, R&D and simulations, moreover working with cross-site departments(team) to ensure setup is efficient and able to meet the creative brief.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Nimona</h3>
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2023</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Massive crowd simulation with battle sequences and stadium environments.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Maya</span>
+                        </div>
                     </div>
                 </div>
             </div>
-			
-			<!-- Project 8 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/mickey17.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Mickey17</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2025</span>
+
+            <div class="project-card-wrapper">
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg h-full border border-gray-700">
+                    <div class="card-image-container">
+                        <img src="Images/mickey17.png" alt="Mickey 17" class="w-full h-full object-cover" />
                     </div>
-                    <p class="text-gray-400 mb-4">Developing procedural crowd setups, R&D and simulations, moreover working with cross-site departments(team) to ensure setup is efficient and able to meet the creative brief.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Mickey 17</h3>
+                            <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2025</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Developing procedural crowd setups and R&D for high-end cinematic simulations.</p>
                     </div>
                 </div>
             </div>
-			
-			<!-- Project 9 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/TTHSS.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Talking Tom Suddenly Super</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2025</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Developing procedural Fx, R&D and simulations, moreover working with cross-site departments(team) to ensure setup is efficient and able to meet the creative brief.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
-                    </div>
+
+            <div class="project-card-wrapper">
+                <div class="bg-gray-800 p-4 rounded-xl h-full border border-gray-700">
+                    <div class="card-image-container"><img src="Images/thama.png" class="w-full h-full object-cover" /></div>
+                    <div class="p-6"><h3 class="text-xl font-bold">Thama</h3></div>
                 </div>
             </div>
-			
-			<!-- Project 10 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/AnimalFriends.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Animal Friends</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2025</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Worked on complicated and hero shots</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
-                    </div>
+            <div class="project-card-wrapper">
+                <div class="bg-gray-800 p-4 rounded-xl h-full border border-gray-700">
+                    <div class="card-image-container"><img src="Images/border2.png" class="w-full h-full object-cover" /></div>
+                    <div class="p-6"><h3 class="text-xl font-bold">Border 2</h3></div>
                 </div>
             </div>
-			
-			<!-- Project 11 -->
-            <div class="bg-gray-800 min-w-[350px] max-w-[350px] p-4 mx-1 rounded-lg shadow-lg">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/Ramayana.png" alt="Fantasy creature made of fire and magic particles with dynamic simulation and secondary motion effects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+             <div class="project-card-wrapper">
+                <div class="bg-gray-800 p-4 rounded-xl h-full border border-gray-700">
+                    <div class="card-image-container"><img src="Images/nimona.png" class="w-full h-full object-cover" /></div>
+                    <div class="p-6"><h3 class="text-xl font-bold">Nimona</h3></div>
                 </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold">Ramayana</h3>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">2026</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Developing procedural crowd setups, R&D and simulations, moreover working with cross-site departments(team) to ensure setup is efficient and able to meet the creative brief.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Houdini</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">RenderMan</span>
-                        <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Python</span>
-                    </div>
-                </div>
-				
             </div>
+             <div class="project-card-wrapper">
+                <div class="bg-gray-800 p-4 rounded-xl h-full border border-gray-700">
+                    <div class="card-image-container"><img src="Images/mickey17.png" class="w-full h-full object-cover" /></div>
+                    <div class="p-6"><h3 class="text-xl font-bold">Mickey 17</h3></div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Skills Section -->
     <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
